@@ -2,7 +2,7 @@
 
 namespace Vendinha.Validacoes
 {
-    /// <summary>Valida se o CPF informado é válido (dígitos verificadores).</summary>
+
     public class CpfValidoAttribute : ValidationAttribute
     {
         public CpfValidoAttribute() : base("CPF inválido.")
@@ -14,7 +14,7 @@ namespace Vendinha.Validacoes
             var cpf = value as string;
             if (string.IsNullOrEmpty(cpf))
             {
-                return true; // obrigatoriedade fica por conta do [Required]
+                return true; 
             }
 
             return CpfEhValido(cpf);
