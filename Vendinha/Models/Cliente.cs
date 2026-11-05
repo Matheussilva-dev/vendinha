@@ -23,7 +23,6 @@ namespace Vendinha.Models
             }
             set
             {
-               
                 this.cpf = new string((value ?? string.Empty).Where(char.IsDigit).ToArray());
             }
         }
@@ -47,7 +46,6 @@ namespace Vendinha.Models
 
         public List<Divida> Dividas { get; set; } = new List<Divida>();
 
-        
         public int Idade
         {
             get
@@ -62,7 +60,6 @@ namespace Vendinha.Models
             }
         }
 
-       
         public decimal TotalDividas
         {
             get
