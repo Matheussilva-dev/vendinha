@@ -23,7 +23,7 @@ namespace Vendinha.Models
             }
             set
             {
-                // guarda somente os dígitos
+               
                 this.cpf = new string((value ?? string.Empty).Where(char.IsDigit).ToArray());
             }
         }
@@ -47,7 +47,7 @@ namespace Vendinha.Models
 
         public List<Divida> Dividas { get; set; } = new List<Divida>();
 
-        // Calculada a partir da data de nascimento (não é gravada no banco)
+        
         public int Idade
         {
             get
@@ -62,7 +62,7 @@ namespace Vendinha.Models
             }
         }
 
-        // Soma das dívidas ainda não pagas (não é gravada no banco)
+       
         public decimal TotalDividas
         {
             get
