@@ -145,7 +145,7 @@ namespace Vendinha.Services
             return true;
         }
 
-        // ---------------- Dívidas ----------------
+       
 
         public List<Divida> ConsultarDividas(int clienteId)
         {
@@ -178,7 +178,7 @@ namespace Vendinha.Services
                 return false;
             }
 
-            // Regra: só pode haver uma dívida em aberto por cliente
+            
             if (context.Dividas.Any(d => d.ClienteId == clienteId && !d.Paga))
             {
                 erros.Add(new ValidationResult("O cliente já possui uma dívida em aberto."));
