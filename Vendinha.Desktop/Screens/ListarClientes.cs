@@ -47,11 +47,24 @@ public partial class ListarClientes : Form
         {
             var linha = dataGridView1.Rows.Add(
                 cliente.Nome,
+                FormatarCpf(cliente.Cpf),
+                cliente.DataNascimento.ToString("dd/MM/yyyy"),
                 cliente.Idade,
+                cliente.Email ?? "-",
                 cliente.TotalDividas.ToString("C2")
                 );
             dataGridView1.Rows[linha].Tag = cliente.Id;
         }
+    }
+
+    private static string FormatarCpf(string cpf)
+    {
+        if (cpf.Length != 11)
+        {
+            return cpf;
+        }
+
+        return $"{cpf.Substring(0, 3)}.{cpf.Substring(3, 3)}.{cpf.Substring(6, 3)}-{cpf.Substring(9, 2)}";
     }
 
     private void btnBuscar_Click(object sender, EventArgs e)

@@ -26,7 +26,10 @@ partial class ListarClientes
         btnDividas = new Button();
         dataGridView1 = new DataGridView();
         colNome = new DataGridViewTextBoxColumn();
+        colCpf = new DataGridViewTextBoxColumn();
+        colNascimento = new DataGridViewTextBoxColumn();
         colIdade = new DataGridViewTextBoxColumn();
+        colEmail = new DataGridViewTextBoxColumn();
         colTotalDividas = new DataGridViewTextBoxColumn();
         btnAnterior = new Button();
         lblPagina = new Label();
@@ -88,14 +91,14 @@ partial class ListarClientes
         dataGridView1.AllowUserToAddRows = false;
         dataGridView1.AllowUserToDeleteRows = false;
         dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-        dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colNome, colIdade, colTotalDividas });
+        dataGridView1.Columns.AddRange(new DataGridViewColumn[] { colNome, colCpf, colNascimento, colIdade, colEmail, colTotalDividas });
         dataGridView1.Location = new Point(12, 50);
         dataGridView1.MultiSelect = false;
         dataGridView1.Name = "dataGridView1";
         dataGridView1.ReadOnly = true;
         dataGridView1.RowHeadersVisible = false;
         dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-        dataGridView1.Size = new Size(663, 300);
+        dataGridView1.Size = new Size(876, 300);
         //
         // colNome
         //
@@ -103,11 +106,29 @@ partial class ListarClientes
         colNome.HeaderText = "Nome";
         colNome.Name = "colNome";
         //
+        // colCpf
+        //
+        colCpf.FillWeight = 90F;
+        colCpf.HeaderText = "CPF";
+        colCpf.Name = "colCpf";
+        //
+        // colNascimento
+        //
+        colNascimento.FillWeight = 85F;
+        colNascimento.HeaderText = "Nascimento";
+        colNascimento.Name = "colNascimento";
+        //
         // colIdade
         //
         colIdade.FillWeight = 50F;
         colIdade.HeaderText = "Idade";
         colIdade.Name = "colIdade";
+        //
+        // colEmail
+        //
+        colEmail.FillWeight = 150F;
+        colEmail.HeaderText = "E-mail";
+        colEmail.Name = "colEmail";
         //
         // colTotalDividas
         //
@@ -128,12 +149,12 @@ partial class ListarClientes
         //
         lblPagina.Location = new Point(118, 398);
         lblPagina.Name = "lblPagina";
-        lblPagina.Size = new Size(451, 28);
+        lblPagina.Size = new Size(664, 28);
         lblPagina.TextAlign = ContentAlignment.MiddleCenter;
         //
         // btnProxima
         //
-        btnProxima.Location = new Point(575, 398);
+        btnProxima.Location = new Point(788, 398);
         btnProxima.Name = "btnProxima";
         btnProxima.Size = new Size(100, 28);
         btnProxima.Text = "Próxima >";
@@ -143,7 +164,7 @@ partial class ListarClientes
         // ListarClientes
         //
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(690, 440);
+        ClientSize = new Size(900, 440);
         Controls.Add(btnProxima);
         Controls.Add(lblPagina);
         Controls.Add(btnAnterior);
@@ -175,7 +196,10 @@ partial class ListarClientes
     private Button btnDividas;
     private DataGridView dataGridView1;
     private DataGridViewTextBoxColumn colNome;
+    private DataGridViewTextBoxColumn colCpf;
+    private DataGridViewTextBoxColumn colNascimento;
     private DataGridViewTextBoxColumn colIdade;
+    private DataGridViewTextBoxColumn colEmail;
     private DataGridViewTextBoxColumn colTotalDividas;
     private Button btnAnterior;
     private Label lblPagina;
