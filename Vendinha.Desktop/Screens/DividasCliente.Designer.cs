@@ -1,4 +1,4 @@
-namespace Vendinha.Desktop.Screens;
+﻿namespace Vendinha.Desktop.Screens;
 
 partial class DividasCliente
 {
@@ -19,6 +19,7 @@ partial class DividasCliente
     {
         components = new System.ComponentModel.Container();
         lblCliente = new Label();
+        lblResumo = new Label();
         dataGridView1 = new DataGridView();
         colValor = new DataGridViewTextBoxColumn();
         colSituacao = new DataGridViewTextBoxColumn();
@@ -39,6 +40,13 @@ partial class DividasCliente
         lblCliente.Name = "lblCliente";
         lblCliente.Text = "Cliente";
         //
+        // lblResumo
+        //
+        lblResumo.AutoSize = true;
+        lblResumo.Location = new Point(12, 285);
+        lblResumo.Name = "lblResumo";
+        lblResumo.Text = "";
+        //
         // dataGridView1
         //
         dataGridView1.AllowUserToAddRows = false;
@@ -51,7 +59,7 @@ partial class DividasCliente
         dataGridView1.ReadOnly = true;
         dataGridView1.RowHeadersVisible = false;
         dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-        dataGridView1.Size = new Size(626, 250);
+        dataGridView1.Size = new Size(626, 230);
         //
         // colValor
         //
@@ -113,6 +121,7 @@ partial class DividasCliente
         Controls.Add(lblValor);
         Controls.Add(btnPagar);
         Controls.Add(dataGridView1);
+        Controls.Add(lblResumo);
         Controls.Add(lblCliente);
         FormBorderStyle = FormBorderStyle.FixedDialog;
         MaximizeBox = false;
@@ -128,6 +137,7 @@ partial class DividasCliente
     #endregion
 
     private Label lblCliente;
+    private Label lblResumo;
     private DataGridView dataGridView1;
     private DataGridViewTextBoxColumn colValor;
     private DataGridViewTextBoxColumn colSituacao;

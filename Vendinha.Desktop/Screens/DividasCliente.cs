@@ -1,4 +1,4 @@
-using Vendinha.Models;
+﻿using Vendinha.Models;
 using Vendinha.Services;
 
 namespace Vendinha.Desktop.Screens;
@@ -37,7 +37,17 @@ public partial class DividasCliente : Form
                 divida.DataPagamento?.ToString("dd/MM/yyyy HH:mm") ?? "-"
                 );
             dataGridView1.Rows[linha].Tag = divida.Id;
+
+            if (divida.Paga)
+            {
+                dataGridView1.Rows[linha].DefaultCellStyle.BackColor = Color.LightGreen;
+            }
         }
+
+        var emAberto = dividas.Where(d => !d.Paga).Sum(d => d.Valor);
+        var pagas = dividas.Where(d => d.Paga).ToList();
+
+        lblResumo.Text = $"Em aberto: {emAberto:C2}   |   Pagas: {pagas.Count} ({pagas.Sum(d => d.Valor):C2})";
     }
 
     private void btnNovaDivida_Click(object sender, EventArgs e)
