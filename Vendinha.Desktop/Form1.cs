@@ -24,4 +24,10 @@ public partial class Form1 : Form
         var tela = new CadastrarCliente(Service);
         tela.ShowDialog(this);
     }
+
+    private void btnDividas_Click(object sender, EventArgs e)
+    {
+        var tela = new ListarDividas(Service);
+        tela.ShowDialog(this);
+    }
 }

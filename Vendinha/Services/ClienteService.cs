@@ -156,6 +156,25 @@ namespace Vendinha.Services
                 .ToList();
         }
 
+        // paga = null: todas | true: só as pagas | false: só as em aberto
+        public List<(string Cliente, Divida Divida)> ConsultarTodasDividas(bool? paga = null)
+        {
+            var consulta = context.Dividas.AsNoTracking().AsQueryable();
+
+            if (paga != null)
+            {
+                consulta = consulta.Where(d => d.Paga == paga);
+            }
+
+            var resultado = consulta
+                .Join(context.Clientes, d => d.ClienteId, c => c.Id,
+                    (d, c) => new { c.Nome, Divida = d })
+                .OrderByDescending(x => x.Divida.DataPagamento ?? x.Divida.DataCriacao)
+                .ToList();
+
+            return resultado.Select(x => (x.Nome, x.Divida)).ToList();
+        }
+
         public bool CriarDivida(int clienteId, decimal valor, out List<ValidationResult> erros)
         {
             var divida = new Divida
