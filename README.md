@@ -80,3 +80,5 @@ A regra de "uma dívida em aberto por cliente" é validada no serviço e também
 - [x] Exclusão de clientes
 - [x] Tela de dívidas e pagamento
 - [x] Documentação
+
+FOI UTILIZADO CALUDE CODE PARA CORREÇÃO DE BUGS ONDE EU NÃO CONSEGUI ACHAR A SOLUÇÃO, AUXILIO EM PEQUENOS ERROS DE SINTAXE E AJUDA NA CRIAÇÃO DO README PARA FICAR O MAIS COMPLETO POSSIVEL.
