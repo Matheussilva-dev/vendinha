@@ -59,7 +59,7 @@ partial class Form1
         btnDividas.Name = "btnDividas";
         btnDividas.Size = new Size(200, 50);
         btnDividas.TabIndex = 0;
-        btnDividas.Text = "Dívidas (pagas)";
+        btnDividas.Text = "Dívidas (em aberto)";
         btnDividas.UseVisualStyleBackColor = true;
         btnDividas.Click += btnDividas_Click;
         // 
